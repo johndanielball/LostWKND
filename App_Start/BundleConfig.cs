@@ -20,7 +20,11 @@ namespace LostWKND
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/site.css"));
+                      "~/Content/Styles/Common.css",
+                      "~/Content/Styles/Category.css",
+                      "~/Content/Styles/Home.css",
+                      "~/Content/Styles/Magazine.css",
+                      "~/Content/Styles/Post.css"));
         }
     }
 }

@@ -1,0 +1,19 @@
+﻿.current-issue-cover {
+    background-color: #001b39;
+    height: 100vh;
+}
+
+#current-issue-cover-image {
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+
+
+/* ===== Mobile =====*/

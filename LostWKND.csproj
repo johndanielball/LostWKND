@@ -141,12 +141,18 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Styles\Home.css" />
+    <Content Include="Content\Styles\Magazine.css" />
+    <Content Include="Content\Styles\Category.css" />
+    <Content Include="Content\Styles\Post.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Styles\Common.css" />
     <Content Include="App_Data\51Degrees.dat" />
     <Content Include="51Degrees.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -180,7 +186,7 @@
     <Content Include="Views\Post\Index_m.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
