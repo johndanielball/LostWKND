@@ -1,4 +1,7 @@
-﻿
+﻿@using LostWKND.Helpers;
+
+@model List<LostWKND.Models.Post>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -8,5 +11,22 @@
         <img id="current-issue-cover-image" src="~/Content/Images/LOSTWKND_Cover_290715_OFW.jpg" />
     </div>
 
-
+    <div class="categories">
+        @{
+            foreach (var x in LookupHelper.Type["Category"])
+            {
+                <div class="category @x.Key.ToLower()">
+                    <div class="category-name">
+                        @x.Key
+                    </div>
+                    <div class="items">
+                        @foreach (var post in Model.Where(p => p.Category_ID == x.Value.ID).ToList())
+                        {
+                            @Html.Partial("Post", post);
+                        }
+                    </div>
+                </div>
+            };
+        }
+    </div>
 </div>

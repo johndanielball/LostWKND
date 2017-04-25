@@ -141,11 +141,17 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Issue.cs" />
+    <Compile Include="Models\Issue_Paragraph.cs" />
+    <Compile Include="Models\Lookup.cs" />
+    <Compile Include="Helpers\LookupHelper.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\LOST-WKND_Birth-Issue_16-12-22_2-e1482435420381.jpg" />
     <Content Include="Content\Styles\Home.css" />
     <Content Include="Content\Styles\Magazine.css" />
     <Content Include="Content\Styles\Category.css" />
@@ -184,10 +190,9 @@
     <Content Include="Views\Home\Index_m.cshtml" />
     <Content Include="Views\Magazine\Index_m.cshtml" />
     <Content Include="Views\Post\Index_m.cshtml" />
+    <Content Include="Views\Home\Post.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

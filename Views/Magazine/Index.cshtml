@@ -1,7 +1,15 @@
-﻿
+﻿@model List<LostWKND.Models.Issue>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="magazine">
+    @{
+        int displayIssueID = ViewBag.DisplayIssueID;
+        var displayIssue = Model.Where(issue => issue.ID == displayIssueID).Single();
+     }
 
+    <img src="@Path.Combine("../Content/Images/", displayIssue.CoverImage.Name + "." + displayIssue.CoverImage.Extension)"/>
+
+</div>

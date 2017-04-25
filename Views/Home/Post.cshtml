@@ -1,0 +1,11 @@
+﻿@model LostWKND.Models.Post
+
+<div>
+    <div class="image">
+        <img src="@Path.Combine("/Content/Images/", string.Format("{0}.{1}", Model.FeatureImage.Name, Model.FeatureImage.Extension))"/>
+    </div>
+    <div class="text">
+        <div class="title">@Model.Title</div>
+        <div class="description">@Model.Description</div>
+    </div>
+</div>

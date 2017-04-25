@@ -14,6 +14,64 @@
     position: absolute;
 }
 
+.home .category img {
+    width: 100%;
+}
 
+.home .categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    min-height: 900px;
+    margin-top: 75px;
+}
 
-/* ===== Mobile =====*/
+.home .category {
+    width: 25%;
+}
+
+.home .category .category-name {
+    text-align: left;
+    font-family: 'Century Gothic Std Regular', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    color: #000000;
+    margin: 0px 0px 15px 0px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #000;
+    line-height: 1.3em;
+}
+
+.home .category .items .text {
+    text-align: center;
+    width: 100%;
+    margin-top: 0px;
+    font-family: 'Century Gothic Std Regular', sans-serif;
+    color: #000000;
+}
+
+.home .category .items .title {
+    font-size: 1.75vw;
+}
+
+.home .category .items .description {
+    line-height: 1.4em;
+    font-size: 16px;
+}
+
+/* ===== Mobile ===== */
+
+.home.mobile #current-issue-cover-image {
+    width: 100%;
+}
+
+.home.mobile .categories {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.home.mobile .category {
+    width: 100%;
+}
