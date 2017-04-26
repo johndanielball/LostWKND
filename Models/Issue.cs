@@ -24,6 +24,6 @@ namespace LostWKND.Models
 
         public Image CoverImage { get; set; }
 
-        //public List<string> Paragraphs { get; set; }
+        public List<string> Paragraphs { get; set; }
     }
 }

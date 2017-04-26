@@ -17,10 +17,18 @@ namespace LostWKND.Controllers
             var issues = DataBase.GetIssues();
             if (issueID == 0)
             {
-                issueID = issues.Where(issue => issue.Is_Current).Single().ID;
+                issueID = issues.Where(item => item.Is_Current).Single().ID;
             }
+
+            var issue = issues.Where(item => issueID == item.ID).Single();
+
+            issue.Paragraphs = DataBase.GetIssueParagraphs(issueID);
+
             ViewBag.DisplayIssueID = issueID;
             
+
+
+
             if (Request.Browser.IsMobileDevice)
             {
                 return View("Index_m");

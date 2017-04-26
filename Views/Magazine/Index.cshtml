@@ -8,8 +8,127 @@
     @{
         int displayIssueID = ViewBag.DisplayIssueID;
         var displayIssue = Model.Where(issue => issue.ID == displayIssueID).Single();
-     }
+    }
 
-    <img src="@Path.Combine("../Content/Images/", displayIssue.CoverImage.Name + "." + displayIssue.CoverImage.Extension)"/>
+    <div class="current-issue-container">
+        <img src="@Path.Combine("../Content/Images/", displayIssue.CoverImage.Name + "." + displayIssue.CoverImage.Extension)" />
+
+        @{
+            foreach (var paragraph in displayIssue.Paragraphs)
+            {
+                <div>@paragraph</div>
+            }
+        }
+    </div>
+
+    <div>
+        <div class="all-issues-header">All Issues</div>
+
+        <hr class="allIssuesHR" />
+
+        <div class="all-issues">
+            @{
+                foreach (var issue in Model)
+                {
+                    <a href="@Url.Action("Index", "Magazine", new { issueID = issue.ID })">
+                        <div class="all-issues-item">
+
+                            <img src="@Path.Combine("../Content/Images/", displayIssue.CoverImage.Name + "." + displayIssue.CoverImage.Extension)" />
+                            <div>@issue.Year</div>
+
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+
+    
+
+    <div>
+        <div class="about-header">About</div>
+
+        <hr />
+
+        <div>
+            <p>Working in tandem with a network of global creatives, our self-published web and print magazine prides itself on provocative editorial and storytelling, superb photography and artwork, and inspirational thinkpieces from around the world. Established in 2016 by Lilly Ball and Andrew Stark, LOST WKND showcases the innovative, the brave, and the controversial.</p>
+
+            <p>The Birth Issue features world-renowned artists Rachel Lee Hovnanian and Tierney Gearon, author Benjamin Percy, star of American Movie Mark Borchardt, exclusive poetry by Andrea Cohen, groundbreaking singer-songwriter Tamaryn, and much more, including exclusive cover art by Berlin-based Pierre Schmidt.</p>
+
+            <p>LOST WKND is based in Minneapolis.</p>
+        </div>
+    </div>
+
+
+
+    <div>
+        <div class="contact-header">Contact</div>
+
+        <hr />
+
+        <div class="contact-lostwknd-header">LOST WKND</div>
+
+        <p>
+            Minneapolis, MN <br />
+            United States
+        </p>
+
+        <p>
+            info@lostwknd.com <br />
+            www.lostwknd.com
+        </p>
+
+        <p>
+            Editor-in-Chief/Creative Director: Lilly Ball <br />
+            Executive Editor: Andrew Stark
+        </p>
+
+        <p>
+            Stockists: <br />
+            Forage Modern Workshop <br />
+            4023 E Lake Street <br />
+            Minneapolis, MN 55406 <br />
+            +1 612 886 3603
+        </p>
+
+        <p>
+            Magers & Quinn Booksellers <br />
+            3038 Hennepin Ave <br />
+            Minneapolis, MN 55408 <br />
+            +1 612 822 4611
+        </p>
+
+        <p>
+            Book House in Dinkytown <br />
+            1316 4th Street SE #201 <br />
+            Minneapolis, MN 55414 <br />
+            +1 612 331 1430
+        </p>
+
+        <p>
+            The Daily Planet <br />
+            5931½ Franklin Ave <br />
+            Hollywood, CA 90028 <br />
+            +1 323 957 0061
+        </p>
+
+        <p>
+            Around the World Fashion Publications, Inc. <br />
+            146 W 37th St <br />
+            New York, NY 10018 <br />
+            +1 212 695 2534
+        </p>
+
+        <p>
+            Reading Frenzy <br />
+            3628 N Mississippi Ave <br />
+            Portland, OR 97227 <br />
+            +1 503 274 1449
+        </p>
+
+    </div>
+
+
+
 
 </div>

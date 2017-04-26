@@ -109,13 +109,13 @@ namespace LostWKND.Models
             return posts;
         }
 
-        public static List<String> GetIssueParagraph(int issueID)
+        public static List<String> GetIssueParagraphs(int issueID)
         {
             var issueParagraphs = new List<String>();
 
             var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LostWKNDConnection"].ConnectionString);
             
-            var cmd = new SqlCommand("GetIssueParagraph", conn);
+            var cmd = new SqlCommand("GetIssueParagraphs", conn);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@Issue_ID", issueID));
 
