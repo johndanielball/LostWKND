@@ -12,8 +12,103 @@
     justify-content: space-around;
 }
 
+.all-issues-header {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 24px;
+}
+.all-issues-hr {
+    max-width: 600px;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 40px;
+}
+
+.about-header {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 24px;
+}
+
+.about-hr {
+    max-width: 600px;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 1.5em;
+}
+
+.contact-header {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 24px;
+}
+
+.contact-hr {
+    max-width: 600px;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 1.5em;
+}
+
+.contact-lostwknd-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: -17px;
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 18px;
+}
+
+.about-paragraphs {
+    font-size: 18px;
+}
+
 .magazine {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.magazine p {
+    font-family: "Century Gothic Std Regular";
+}
+
+.current-issue-paragraphs {
+    background-color: white;
+    position: relative;
+    margin-top: 100px;
+}
+
+.current-issue-paragraph {
+    font-size: 18px;
+    margin: 0px;
+}
+
+.current-issue-img-container {
+    position: relative;
+    height: 100vh;
+}
+
+.current-issue-img {
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: auto;
+}
+
+#all-issues, #contact, #about {
+    font-family: 'Century Gothic Std Regular';
 }

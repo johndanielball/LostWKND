@@ -1,0 +1,24 @@
+﻿@font-face {
+	font-family: 'Futura TGW';
+	src: url('../Fonts/futura_medium-webfont.eot');
+	src: url('../Fonts/futura_medium-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../Fonts/futura_medium-webfont.woff') format('woff'),
+		url('../Fonts/futura_medium-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Century Gothic Std Regular';
+	src: url('../Fonts/century-gothic-std-regular.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+ 
+.futura {
+	font-family: 'Futura TGW', Futura, Helvetica, sans-serif;
+}
+
+.century-gothic {
+	font-family: 'Century Gothic Std Regular', sans-serif;
+}

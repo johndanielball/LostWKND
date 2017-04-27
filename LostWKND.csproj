@@ -156,11 +156,16 @@
     <Content Include="Content\Styles\Magazine.css" />
     <Content Include="Content\Styles\Category.css" />
     <Content Include="Content\Styles\Post.css" />
+    <Content Include="Content\Styles\Fonts.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\Common.css" />
     <Content Include="App_Data\51Degrees.dat" />
     <Content Include="51Degrees.config" />
+    <Content Include="Content\Fonts\century-gothic-std-regular.otf" />
+    <Content Include="Content\Fonts\futura_medium-webfont.eot" />
+    <Content Include="Content\Fonts\futura_medium-webfont.ttf" />
+    <Content Include="Content\Fonts\futura_medium-webfont.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Mobile\Default.aspx" />
     <Content Include="Scripts\jquery-1.10.2.js" />

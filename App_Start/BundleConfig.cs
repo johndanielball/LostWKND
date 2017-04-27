@@ -24,7 +24,8 @@ namespace LostWKND
                       "~/Content/Styles/Category.css",
                       "~/Content/Styles/Home.css",
                       "~/Content/Styles/Magazine.css",
-                      "~/Content/Styles/Post.css"));
+                      "~/Content/Styles/Post.css",
+                      "~/Content/Styles/Fonts.css"));
         }
     }
 }
