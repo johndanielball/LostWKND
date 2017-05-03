@@ -1,7 +1,15 @@
-﻿
+﻿@model List<LostWKND.Models.Post>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<div class="category">
+    <div class="categories">
+        
+            @foreach (var post in Model)
+            {
+                @Html.Partial("Post", post);
+            }
+    </div>
+</div>

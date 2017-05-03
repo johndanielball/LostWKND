@@ -17,7 +17,7 @@
             {
                 <div class="category @x.Key.ToLower()">
                     <div class="category-name">
-                        @x.Key
+                        <a href="@Url.Action("Index", "Category", new { CategoryName = x.Key})">@x.Key</a>
                     </div>
                     <div class="items">
                         @foreach (var post in Model.Where(p => p.Category_ID == x.Value.ID).ToList())

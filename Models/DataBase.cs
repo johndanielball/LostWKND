@@ -57,24 +57,19 @@ namespace LostWKND.Models
             return issues;
         }
 
-        public static List<Post> GetPosts()
+        public static List<Post> GetPosts(int categoryTypeID = 0)
         {
             var posts = new List<Post>();
 
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LostWKNDConnection"].ConnectionString);
-            SqlCommand cmd = new SqlCommand();
+            var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LostWKNDConnection"].ConnectionString);
+            var cmd = new SqlCommand("GetPosts", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            cmd.Connection = conn;
-            cmd.CommandText = "SELECT p.ID, p.Category_ID, p.Title, p.[Description], i.Name, i.Extension, i.Caption" +
-                              " FROM Post p" +
-                              " INNER JOIN" +
-                              " Post_Image pi" +
-                              " ON p.ID = pi.Post_ID" +
-                              " INNER JOIN" +
-                              " Image i" +
-                              " ON pi.Image_ID = i.ID" +
-                              " WHERE pi.Is_Feature = 1";
-
+            if (categoryTypeID != 0)
+            {
+                cmd.Parameters.Add("@CategoryTypeID", categoryTypeID);
+            }
+            
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
 

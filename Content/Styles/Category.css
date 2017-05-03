@@ -1,2 +1,17 @@
-﻿body {
+﻿.categories {
+    display: flex;
+}
+
+.category .categories > div {
+    position: relative;
+    height: 250px;
+    width: 250px;
+}
+
+.category .categories .text {
+    text-align: center;
+    transform: translateY(125px);
+    margin-top: -18px;
+    position: absolute;
+    width: 100%;
 }

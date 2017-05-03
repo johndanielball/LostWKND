@@ -33,7 +33,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>2</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -196,6 +196,7 @@
     <Content Include="Views\Magazine\Index_m.cshtml" />
     <Content Include="Views\Post\Index_m.cshtml" />
     <Content Include="Views\Home\Post.cshtml" />
+    <Content Include="Views\Category\Post.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
