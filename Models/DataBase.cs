@@ -57,7 +57,7 @@ namespace LostWKND.Models
             return issues;
         }
 
-        public static List<Post> GetPosts(int categoryTypeID = 0)
+        public static List<Post> GetPosts(int categoryTypeID = 0, int postID = 0)
         {
             var posts = new List<Post>();
 
@@ -68,6 +68,11 @@ namespace LostWKND.Models
             if (categoryTypeID != 0)
             {
                 cmd.Parameters.Add("@CategoryTypeID", categoryTypeID);
+            }
+
+            if (postID != 0)
+            {
+                cmd.Parameters.Add("@PostID", postID);
             }
             
             conn.Open();
@@ -129,6 +134,94 @@ namespace LostWKND.Models
             conn.Close();
 
             return issueParagraphs;
+
+        }
+
+        public static List<object> GetPostContect(int postID)
+        {
+            var content = new List<object>();
+
+            var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LostWKNDConnection"].ConnectionString);
+
+            var cmd = new SqlCommand("GetPostContent", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@PostID", postID));
+
+            conn.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            int postIDpos = reader.GetOrdinal("Post_ID");
+            int imageIDpos = reader.GetOrdinal("Image_ID");
+            int paragraphIDpos = reader.GetOrdinal("Paragraph_ID");
+            int orderPos = reader.GetOrdinal("Order");
+
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(imageIDpos) && !reader.IsDBNull(paragraphIDpos))
+                {
+                    content.Add(GetParagraph(reader.GetInt32(paragraphIDpos)));
+                }
+                
+                if (!reader.IsDBNull(imageIDpos) && reader.IsDBNull(paragraphIDpos))
+                {
+                    content.Add(GetImage(reader.GetInt32(imageIDpos)));
+                }
+            }
+
+            return content;
+        }
+
+        public static Image GetImage(int imageID)
+        {
+            var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LostWKNDConnection"].ConnectionString);
+
+            var cmd = new SqlCommand("GetImage", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ImageID", imageID));
+
+            conn.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            int imageIDpos = reader.GetOrdinal("ID");
+            int imageNamePos = reader.GetOrdinal("Name");
+            int imageExtensionPos = reader.GetOrdinal("Extension");
+            int imageCaptionPos = reader.GetOrdinal("Caption");
+
+            reader.Read();
+
+            var image = new Image();
+
+            image.ID = reader.GetInt32(imageIDpos);
+            image.Name = reader.GetString(imageNamePos);
+            image.Extension = reader.GetString(imageExtensionPos);
+            image.Caption = reader.GetString(imageCaptionPos);
+
+            conn.Close();
+
+            return (image);
+        }
+
+        public static string GetParagraph(int paragraphID)
+        {
+            var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LostWKNDConnection"].ConnectionString);
+
+            var cmd = new SqlCommand("GetParagraph", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@ParagraphID", paragraphID));
+
+            conn.Open();
+
+            var reader = cmd.ExecuteReader();
+            
+            int paragraphTextPos = reader.GetOrdinal("Text");
+
+            reader.Read();
+
+            var paragraph = reader.GetString(paragraphTextPos);
+
+            return paragraph;
 
         }
     }

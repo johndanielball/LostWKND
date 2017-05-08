@@ -7,6 +7,7 @@ namespace LostWKND.Models
 {
     public class Image
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Extension { get; set; }
         public string Caption { get; set; }

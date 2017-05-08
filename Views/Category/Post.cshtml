@@ -1,8 +1,10 @@
 ﻿@model LostWKND.Models.Post
 
-<div style="background-image: url(@Path.Combine("/Content/Images/", string.Format("{0}.{1}", Model.FeatureImage.Name, Model.FeatureImage.Extension)))">
-    <div class="text">
-        <div class="title">@Model.Title</div>
-        <div class="description">@Model.Description</div>
+<a href="@Url.Action("Index", "Post", new { postID = Model.ID})">
+    <div class="categories-item" style="background-image: url(@Path.Combine("/Content/Images/", string.Format("{0}.{1}", Model.FeatureImage.Name, Model.FeatureImage.Extension)))">
+        <div class="text">
+            <div class="title">@Model.Title</div>
+            <div class="description">@Model.Description</div>
+        </div>
     </div>
-</div>
+</a>

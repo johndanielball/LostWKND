@@ -24,5 +24,7 @@ namespace LostWKND.Models
         public string Description { get; set; }
 
         public Image FeatureImage { get; set; }
+
+        public List<object> Content { get; set; }
     }
 }

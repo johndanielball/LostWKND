@@ -197,6 +197,7 @@
     <Content Include="Views\Post\Index_m.cshtml" />
     <Content Include="Views\Home\Post.cshtml" />
     <Content Include="Views\Category\Post.cshtml" />
+    <Content Include="Views\Post\PostHeader.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
