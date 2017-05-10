@@ -5,3 +5,18 @@
 }
 
 @Html.Partial("PostHeader", Model)
+
+<div>
+    @foreach (var item in Model.Content)
+    {
+        if(item.GetType() == typeof(string))
+        {
+            <p>item</p>
+        }
+        else if(item.GetType() == typeof(LostWKND.Models.Image))
+        {
+            var image = item as LostWKND.Models.Image;
+            <img src="@Path.Combine("../Content/Images/", image.Name + "." + image.Extension)" />
+        }
+    }
+</div>

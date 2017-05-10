@@ -4,8 +4,12 @@
     <div class="title">
         @Model.Title
     </div>
+
     <div class="sub-title">
         When I Move You Move (Just Like That)
     </div>
-    <img class="header-image" />
+
+    <div>
+        <img src="@Path.Combine("../Content/Images", Model.FeatureImage.Name + "." + Model.FeatureImage.Extension)"
+    </div>
 </div>
